@@ -13,13 +13,12 @@ body {
 main {
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-    circle farthest-corner at top left,
-    rgba(0, 97, 253, 0.25),
-    /* azul claro #0061FD com 25% de opacidade */ rgba(84, 98, 203, 0.15),
-    /* roxo #5462CB com 15% de opacidade */ rgba(255, 255, 255, 0)
-      /* desaparece suavemente */
-  );
+  background: linear-gradient(
+    to bottom,
+    rgba(3, 7, 18, 0.7) 0%,
+    /* overlay escuro no topo */ rgba(0, 97, 253, 0.151) 50%,
+    /* azul no meio */ rgba(0, 97, 253, 0) 100% /* some suavemente */
+  ) !important;
 }
 
 .navbar {
@@ -30,7 +29,7 @@ main {
 }
 
 #main-banner {
-  background: url("../img/frame.png") no-repeat center center/cover;
+  background: url("../img/grid.png") no-repeat center center/cover;
 }
 
 #main-banner .overlay {
@@ -40,8 +39,8 @@ main {
   background: linear-gradient(
     to bottom,
     rgba(3, 7, 18, 0.7) 0%,
-    /* overlay escuro no topo */ rgba(0, 97, 253, 0.151) 50%,
-    /* azul no meio */ rgba(0, 97, 253, 0) 100% /* some suavemente */
+    /* overlay escuro no topo*/ rgba(0, 97, 253, 0.151) 30%,
+    /* azul no meio */ rgba(3, 7, 18, 0.7) 100% /* some suavemente */
   ) !important;
 }
 
@@ -55,9 +54,26 @@ main {
   }
 }
 
+.carousel-control-next,
+.carousel-control-prev {
+  & * {
+    color: #fff !important;
+    background-color: #fff !important;
+  }
+}
+
 @media (max-width: 768px) {
   .main-title {
     font-size: 40px;
+  }
+
+  .depoimentos {
+    justify-content: center;
+    align-items: center;
+
+    & * {
+      text-align: center;
+    }
   }
 
   footer .ft2 {
@@ -79,17 +95,6 @@ main {
 
 .img {
   width: 100%;
-}
-
-#gamification {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to right,
-    #030712 0%,
-    #040916 50%,
-    #030712 100%
-  );
 }
 
 .bg-course-card {
